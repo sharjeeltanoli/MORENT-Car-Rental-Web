@@ -14,7 +14,7 @@ const Home = () => {
 
       {/* Filters Products */}
       <div className=" text-center my-8">
-        <ButtonC text={"Show more Cars"} link={"/category"} />
+        <ButtonC text={"Show more Cars"} link={"/products"} />
       </div>
       
    

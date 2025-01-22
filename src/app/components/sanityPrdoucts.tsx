@@ -6,6 +6,10 @@ import Image from "next/image";
 import { client } from "../../sanity/lib/client";
 import ButtonC from "../components/Button";
 import { urlFor } from "@/sanity/lib/image";
+import Link from "next/link";
+
+
+
 export default async function Products() {
 
   const query = async () => {
@@ -17,15 +21,18 @@ export default async function Products() {
 
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-screen-xl mx-auto px-2">
+      
 {
 vehicle.map((items:any)=>{
   return(
-    <div>
-  <div className="border rounded-lg bg-white px-4 py-6 m-2 ">
-<div className="flex justify-between">
-  <h4 className="text-lg font-bold ">{items.name} </h4>
-  <div> {}</div>
-</div>
+<div key={items._id}> {/* Add a key prop for React */}
+            <div className="border rounded-lg bg-white px-4 py-6 m-2">
+              <div className="flex justify-between">
+                <Link href={`/products/${items._id}`}> {/* Link to the product detail page */}
+                  <h4 className="text-lg font-bold cursor-pointer">{items.name}</h4>
+                </Link>
+                <div>{/* Other elements can go here */}</div>
+              </div>
   <h5 className="text-slate-500 font-semibold">{items.type}  </h5>
   <div className=" justify-items-center my-8 h-16"> {<Image src={urlFor(items.image).url()} alt={items.title}  width={200} height={200} />}    </div>
 <ul className="flex text-slate-500 text-[12px] pt-4">
@@ -39,13 +46,16 @@ vehicle.map((items:any)=>{
 <li className="text-slate-500 line-through"> {items.originalPrice} </li>
 </ul>
 <div>
-<ButtonC text={"Rent Now"} link={"/payment"}/>
+<ButtonC text={"Rent Now"} link={""}/>
+
 </div>
+
 </div>
 
       </div>
-
+      
     </div>
+  
   )
 })
 }
