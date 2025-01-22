@@ -25,7 +25,7 @@ return(
 
     <h1 className="text-3xl whitespace-pre-line py-6">{Info.title}</h1>
     <p className="text-sm whitespace-pre-line">{Info.describtion}</p>
-    <div className="mt-4"> <ButtonC text={"Rental Car"} link={"/category"} /> </div>
+    <div className="mt-4"> <ButtonC text={"Rental Car"} link={"/products"} /> </div>
     <div className="justify-items-center"> {Info.image}</div>
     
     
