@@ -23,11 +23,12 @@ export default async function Products() {
         return (
           <div key={items._id} className="m-2">
             
-              <div className="border rounded-lg bg-white px-4 py-6 cursor-pointer">
+              <div className="border rounded-lg bg-white px-4 py-6">
               <Link href={`/products/${items._id}`}>
                 <h4 className="flex justify-between text-lg font-bold">{items.name}</h4>
+                </Link> 
                 <h5 className="text-slate-500 font-semibold">{items.type}</h5>
-                </Link>
+                
                 <div className="justify-items-center my-8 h-16">
                   <Image src={urlFor(items.image).url()} alt={items.title} width={200} height={200} />
                 </div>
