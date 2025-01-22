@@ -40,6 +40,9 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
 
+  if (loading) {
+    return <div>Loading... Please wait</div>;
+  }
   if (!product) {
     return <div>Product not found</div>;
   }
