@@ -1,3 +1,5 @@
+//this is previous data of design jam 2024 not using it in currentassignment
+
 import Image from "next/image"
 import Heart from "/public/heart.png"
 import RedHeart from "/public/heartred.png"

@@ -1,23 +1,18 @@
 import BookingSection from "./components/BookingSection"
 import ButtonC from "./components/Button"
 import HeroSection from "./components/HeroSection"
-import Products from "./components/sanityPrdoucts"
-import Selectbox from "./components/Selectbox"
+import SanityProducts from "./components/sanityPrdoucts"
 const Home = () => {
   return (
     <div>
+      <div>
       <HeroSection/>
-      <Selectbox/>
-
-      {/* Data from sanity*/}
-      <Products/>
-
-      {/* Filters Products */}
+      <BookingSection/>
+      </div>
+      <SanityProducts/>
       <div className=" text-center my-8">
         <ButtonC text={"Show more Cars"} link={"/products"} />
       </div>
-      
-   
     </div>
   )
 }

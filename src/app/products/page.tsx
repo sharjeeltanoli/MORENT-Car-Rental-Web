@@ -1,7 +1,5 @@
-
 import BookingSection from "../components/BookingSection"
-import Products from "../components/sanityPrdoucts"
-import Selectbox from "../components/Selectbox"
+import SanityProducts from "../components/sanityPrdoucts"
 
 const Category = () => {
   return (
@@ -29,7 +27,7 @@ const Category = () => {
 <div className="w-4/5">
     <div> <BookingSection/>   </div>
    {/* Data from sanity*/}
-         <Products/>
+         <SanityProducts/>
          </div>
 
 
