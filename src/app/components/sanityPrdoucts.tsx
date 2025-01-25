@@ -12,7 +12,7 @@ import Link from "next/link";
 export default async function Products() {
 
   const query = async () => {
-    const data = client.fetch((`*[_type=='car']`));
+    const data = await client.fetch((`*[_type=='car']`));
     return data
   }
   const vehicle = await query();
@@ -24,12 +24,10 @@ export default async function Products() {
 {
 vehicle.map((items:any)=>{
   return(
-<div key={items._id}> {/* Add a key prop for React */}
+<Link href={`/products/${items._id}`} key={items._id}> {/* Add a key prop for React */}
             <div className="border rounded-lg bg-white px-4 py-6 m-2">
               <div className="flex justify-between">
-                <Link href={`/products/${items._id}`}> {/* Link to the product detail page */}
                   <h4 className="text-lg font-bold cursor-pointer">{items.name}</h4>
-                </Link>
                 <div>{/* Other elements can go here */}</div>
               </div>
   <h5 className="text-slate-500 font-semibold">{items.type}  </h5>
@@ -53,7 +51,7 @@ vehicle.map((items:any)=>{
 
       </div>
       
-    </div>
+    </Link>
   
   )
 })
