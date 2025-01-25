@@ -6,7 +6,16 @@ import ButtonC from "./components/Button"
 import HeroSection from "./components/HeroSection"
 
 interface Vehicle {
-  tags: string[]; 
+  _id: string;
+  name: string;
+  type: string;
+  image: string;
+  fuelCapacity: string; 
+  transmission: string;
+  seatingCapacity: number; 
+  pricePerDay: string; 
+  originalPrice?: string; 
+  tags?: string[]; 
 }
 
 const Home = async () => {

@@ -6,8 +6,26 @@ import ButtonC from "./Button";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 
+interface Vehicle {
+  _id: string;
+  name: string;
+  type: string;
+  image: string; // Assuming this is a URL or a reference to an image
+  fuelCapacity: string; // Adjust type as necessary
+  transmission: string;
+  seatingCapacity: number; // Assuming this is a number
+  pricePerDay: string; // Adjust type as necessary
+  originalPrice?: string; // Optional property
+  tags?: string[]; // Optional array of tags
+}
 
-const CarList = ({vehicles})=>{
+// Define the props for the CarList component
+interface CarListProps {
+  vehicles: Vehicle[];
+}
+
+// Define the CarList component
+const CarList: React.FC<CarListProps> = ({ vehicles }) => {
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-screen-xl mx-auto px-2">
       
