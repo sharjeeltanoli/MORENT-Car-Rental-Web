@@ -12,7 +12,7 @@ import Link from "next/link";
 export default async function Products() {
 
   const query = async () => {
-    const data = client.fetch((`*[_type=='car']`));
+    const data = await client.fetch((`*[_type=='car']`));
     return data
   }
   const vehicle = await query();
