@@ -2,27 +2,17 @@ import gasstation from "/public/gasstation.png"
 import gear from "/public/gear.png"
 import profile from "/public/profile.png"
 import Image from "next/image";
-
-import { client } from "../../sanity/lib/client";
-import ButtonC from "../components/Button";
+import ButtonC from "./Button";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 
 
-export default async function Products() {
-
-  const query = async () => {
-    const data = await client.fetch((`*[_type=='car']`));
-    return data
-  }
-  const vehicle = await query();
-  console.log(vehicle);
-
+const CarList = ({vehicles})=>{
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-screen-xl mx-auto px-2">
       
 {
-vehicle.map((items:any)=>{
+vehicles.map((items:any)=>{
   return(
 <Link href={`/products/${items._id}`} key={items._id}> {/* Add a key prop for React */}
             <div className="border rounded-lg bg-white px-4 py-6 m-2">
@@ -59,3 +49,4 @@ vehicle.map((items:any)=>{
     </div>
   )
 }
+export default CarList

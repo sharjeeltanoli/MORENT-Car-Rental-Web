@@ -1,10 +1,17 @@
 import BookingSection from "../components/BookingSection"
-import SanityProducts from "../components/sanityPrdoucts"
+import { client } from "../../sanity/lib/client";
+import CarList from "../components/CarList";
 
-const Category = () => {
+const Category = async () => {
+  const query = async () => {
+    const data = await client.fetch(`*[_type == "car"]`);
+    return data;
+  };
+  const vehicles = await query();
+
   return (
     <div className="flex ">
-<div className=" md:flex md:flex-col w-1/5 bg-white hidden md:hover"> 
+<div className=" md:flex md:flex-col w-1/6 bg-white hidden md:hover"> 
 <form className="flex flex-col space-y-4 pl-4 text-slate-600">
   <h4 className="font-semibold text-lg">  </h4>
 <label>   <input type="checkbox" name="Sports" value="Sports"/>  Sport            </label>
@@ -24,10 +31,17 @@ const Category = () => {
 </form>
 
 </div>
-<div className="w-4/5">
+<div className="w-5/6">
     <div> <BookingSection/>   </div>
+
    {/* Data from sanity*/}
-         <SanityProducts/>
+<div className="max-w-screen-xl mx-auto px-2">
+      <h2 className="text-2xl font-bold my-4 text-center">All Cars</h2>
+      <CarList vehicles={vehicles} />
+</div>
+
+
+
          </div>
 
 
