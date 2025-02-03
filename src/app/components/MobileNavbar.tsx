@@ -1,13 +1,26 @@
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+
 import { Search } from 'lucide-react';
 import { SlidersHorizontal } from 'lucide-react';
-import { UserRoundPen } from 'lucide-react';
 
 const MoblileNavbar = () => {
   return (
 <header className= 'py-3 border-b-2 bg-white mx-auto h-36 md:hidden'>
     <div className='flex justify-around my-4'>
         <h3 className='text-2 xl font-bold text-blue-600'>MORENT</h3>
-        <div className=' flex border rounded-full w-10 justify-center items-center '> <UserRoundPen />  </div>
+        <div className=' flex justify-center items-center '> 
+         <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+         </div>
     </div>
     <div className='flex justify-around my-4'>
     <div className='flex border rounded-full w-60 justify-between h-10 px-3 items-center'>   

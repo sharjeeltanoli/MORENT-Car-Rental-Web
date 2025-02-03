@@ -28,16 +28,16 @@ const ProductDetail = async () => {
 {/*Left Div*/}
       <div>
       <div className="hover:shadow-xl transition-shadow duration-300 bg-white border rounded-sm mx-4 my-4 px-4 flex-1">
-        <h2 className="text-2xl md:text-3xl py-2 font-bold text-blue-600">
+        <h2 className="text-2xl md:text-3xl py-2 font-bold text-blue-600 ">
             {fetchedProduct.type} Car with Best Design and Acceleration
         </h2>
           <p className="text-sm pb-4">
               Safety and comfort while driving a futuristic and elegant {fetchedProduct.type} car
           </p>
-        <div className='flex justify-center'>
+        <div className='flex justify-center my-4'>
           <Image src={urlFor(fetchedProduct.image).url()} alt={fetchedProduct.title} width={400} height={400} />
         </div>
-        <div className='flex'>      
+        <div className='flex my-2'>      
     <div className='flex-1'>
           <Image src={"/view2.png"} alt={"Steering Image"} width={200} height={200} />
         </div>

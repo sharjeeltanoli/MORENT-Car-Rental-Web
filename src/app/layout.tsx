@@ -1,3 +1,8 @@
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
+
+
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -14,14 +19,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
-      <body className="max-w-screen-2xl mx-auto bg-slate-100">
-      <Navbar/>
+      <body>
+        
+{/*Header Components*/}
+        <Navbar/>
       <MoblileNavbar/>
         {children}
+{/*Footer Component*/}
         <Footer/>
-        </body>
-  
+      </body>
     </html>
+  </ClerkProvider>
+    
+      
+        
+  
+   
   );
 }

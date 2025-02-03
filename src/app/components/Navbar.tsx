@@ -1,9 +1,18 @@
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+
+
+
 import { Search } from 'lucide-react';
 import { SlidersHorizontal } from 'lucide-react';
 import { Heart } from 'lucide-react';
 import { Bell } from 'lucide-react';
 import { Settings } from 'lucide-react';
-import { UserRoundPen } from 'lucide-react';
+
 
 const Navbar = () => {
   return (
@@ -18,7 +27,14 @@ const Navbar = () => {
          <div className=' flex border rounded-full w-10 justify-center items-center '> <Heart/>  </div>
          <div className=' flex border rounded-full w-10 justify-center items-center '> <Bell />  </div>
          <div className=' flex border rounded-full w-10 justify-center items-center '> <Settings />  </div>
-         <div className=' flex border rounded-full w-10 justify-center items-center '> <UserRoundPen />  </div>
+         <div className=' flex justify-center items-center '> 
+         <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+         </div>
          </div>       
     </header>
   )
